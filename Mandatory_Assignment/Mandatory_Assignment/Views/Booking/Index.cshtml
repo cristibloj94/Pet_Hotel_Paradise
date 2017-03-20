@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Book your reservation here</h2>
+@model Mandatory_Assignment.Models.Reservation
+@using (Html.BeginForm("BookReservation", "Booking", FormMethod.Post))
+{
+    <h3>Customer information</h3>
+    <label>First Name</label>
+    @Html.TextBoxFor(m => m.customer.firstname) <br />
+    <label>Last Name</label>
+    @Html.TextBoxFor(m => m.customer.lastname) <br />
+    <label>Address</label>
+    @Html.TextBoxFor(m => m.customer.address) <br />
+    <label>Zip</label>
+    @Html.TextBoxFor(m => m.customer.zipcode) <br />
+    <label>City</label>
+    @Html.TextBoxFor(m => m.customer.city) <br />
+    <label>email</label>
+    @Html.TextBoxFor(m => m.customer.email) <br />
+    <label>Phone</label>
+    @Html.TextBoxFor(m => m.customer.phone) <br />
+    <h3>Reservation details</h3>
+    <label>Species</label>
+    @Html.DropDownList("speciesList") <br />
+    <label>Pet name</label>
+    @Html.TextBoxFor(m => m.petName) <br />
+    <label>Arrival</label>
+    @Html.EditorFor(m => m.startDate) <br />
+    <label>Departure</label>
+    @Html.EditorFor(m => m.endDate) <br />
+    <input type="submit" value="Place your reservation" />
+}

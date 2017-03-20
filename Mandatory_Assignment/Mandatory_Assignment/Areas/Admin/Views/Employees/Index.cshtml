@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using Mandatory_Assignment.Models;
+@using Mandatory_Assignment.Infrastructure;
+
+<a href="/Admin/Dashboard">Back To The Dashboard</a>
+<br />
+<h2>Employee list</h2>
+
+@foreach (Employee employee in ViewBag.repository.Employees)
+{
+    <h3>@employee.firstname @employee.lastname</h3>
+    <p>
+        ID number: @employee.personID<br />
+        Initials: @employee.initials.ToUpper()<br />
+        Phone number: @employee.phone<br />
+        Active reservations: @employee.reservations.Count<br />
+    </p>
+    <hr />
+}

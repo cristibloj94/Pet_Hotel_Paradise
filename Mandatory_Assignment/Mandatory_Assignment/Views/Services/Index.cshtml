@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Price list</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Specie</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    @foreach (KeyValuePair<string, int> kvp in ViewBag.repository.Prices)
+    {
+        <tr>
+            <td>@kvp.Key</td>
+            <td>@kvp.Value</td>
+        </tr>
+    }
+</table>
+
+<p>Prices are per start day</p>

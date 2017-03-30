@@ -9,32 +9,31 @@ namespace Mandatory_Assignment.Models
     public class Reservation
     {
         // properties
-        public int reservationID { get; set; }
+        public int ReservationID { get; set; }
         [Required(AllowEmptyStrings = false)]
-        public string petName { get; set; }
+        public string PetName { get; set; }
         [DataType(DataType.Date)]
-        public DateTime birthdate { get; set; }
-        public string specie { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string Specie { get; set; }
         [DataType(DataType.Date)]
-        public DateTime startDate { get; set; }
-        [Display(Name = "TAKE YOUR FUCKIN PET AT", Prompt = "When?")]
+        public DateTime StartDate { get; set; }
         [DataType(DataType.Date)]
-        public DateTime endDate { get; set; }
-        public Customer customer { get; set; }
-        public Employee employee { get; set; }
+        public DateTime EndDate { get; set; }
+        public Customer Customer { get; set; }
+        public Employee Employee { get; set; }
 
         public Reservation() { }
 
         // constructors
-        public Reservation(int reservationID, string petName, string specie, DateTime startDate, DateTime endDate, Customer customer, Employee employee)
+        public Reservation(int ReservationID, string PetName, string Specie, DateTime StartDate, DateTime EndDate, Customer Customer, Employee Employee)
         {
-            this.reservationID = reservationID;
-            this.petName = petName;
-            this.specie = specie;
-            this.startDate = startDate;
-            this.endDate = endDate;
-            this.customer = customer;
-            this.employee = employee;
+            this.ReservationID = ReservationID;
+            this.PetName = PetName;
+            this.Specie = Specie;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+            this.Customer = Customer;
+            this.Employee = Employee;
         }
     }
 }

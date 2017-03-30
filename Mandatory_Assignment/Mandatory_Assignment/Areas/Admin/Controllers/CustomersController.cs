@@ -20,7 +20,7 @@ namespace Mandatory_Assignment.Areas.Admin.Controllers
             {
                 foreach (Customer customer in repository.Customers)
                 {
-                    viewReservations.Add(new SelectListItem { Text = (customer.firstname + " " + customer.lastname), Value = (customer.firstname + " " + customer.lastname) });
+                    viewReservations.Add(new SelectListItem { Text = (customer.Firstname + " " + customer.Lastname), Value = (customer.Firstname + " " + customer.Lastname) });
                 }
                 Session["viewReservations"] = viewReservations;
             }

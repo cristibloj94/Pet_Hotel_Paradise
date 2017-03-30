@@ -30,7 +30,7 @@ namespace Mandatory_Assignment.Controllers
         public ActionResult BookReservation(Reservation res, FormCollection formData)
         {
             Repository repository = new Repository();
-            res.specie = formData["speciesList"];
+            res.Specie = formData["speciesList"];
             if (Session["repository"] == null)
             {
                 Session["repository"] = repository;

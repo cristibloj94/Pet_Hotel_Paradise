@@ -9,26 +9,26 @@
 {
     <h3>Customer information</h3>
     <label>First Name</label>
-    @Html.TextBoxFor(m => m.customer.firstname) <br />
+    @Html.TextBoxFor(m => m.Customer.Firstname) <br />
     <label>Last Name</label>
-    @Html.TextBoxFor(m => m.customer.lastname) <br />
+    @Html.TextBoxFor(m => m.Customer.Lastname) <br />
     <label>Address</label>
-    @Html.TextBoxFor(m => m.customer.address) <br />
+    @Html.TextBoxFor(m => m.Customer.Address) <br />
     <label>Zip</label>
-    @Html.TextBoxFor(m => m.customer.zipcode) <br />
+    @Html.TextBoxFor(m => m.Customer.Zipcode) <br />
     <label>City</label>
-    @Html.TextBoxFor(m => m.customer.city) <br />
+    @Html.TextBoxFor(m => m.Customer.City) <br />
     <label>email</label>
-    @Html.TextBoxFor(m => m.customer.email) <br />
+    @Html.TextBoxFor(m => m.Customer.Email) <br />
     <label>Phone</label>
-    @Html.TextBoxFor(m => m.customer.phone) <br />
+    @Html.TextBoxFor(m => m.Customer.Phone) <br />
     <h3>Reservation details</h3>
     <label>Species</label>
     @Html.DropDownList("speciesList") <br />
     <label>Pet name</label>
-    @Html.TextBoxFor(m => m.petName) <br />
+    @Html.TextBoxFor(m => m.PetName) <br />
     <label>Arrival</label>
-    @Html.EditorFor(m => m.startDate) <br />
-    @Html.LabelFor(m => m.endDate) @Html.EditorFor(m => m.endDate) <br />
+    @Html.EditorFor(m => m.StartDate) <br />
+    @Html.LabelFor(m => m.EndDate) @Html.EditorFor(m => m.EndDate) <br />
     <input type="submit" value="Place your reservation" />
 }

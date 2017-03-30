@@ -8,26 +8,26 @@ namespace Mandatory_Assignment.Models
     public class Person
     {
         // properties
-        public int personID { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string phone { get; set; }
+        public int PersonID { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Phone { get; set; }
 
         public Person() { }
 
         // constructors
-        public Person(int personID, string firstname, string lastname, string phone)
+        public Person(int PersonID, string Firstname, string Lastname, string Phone)
         {
-            this.personID = personID;
-            this.firstname = firstname;
-            this.lastname = lastname;
-            if (phone.Length < 8)
+            this.PersonID = PersonID;
+            this.Firstname = Firstname;
+            this.Lastname = Lastname;
+            if (Phone.Length < 8)
             {
                 throw new Exception("Please check your phone number, it seems to be invalid");
             }
             else
             {
-                this.phone = phone;
+                this.Phone = Phone;
             }
         }
     }

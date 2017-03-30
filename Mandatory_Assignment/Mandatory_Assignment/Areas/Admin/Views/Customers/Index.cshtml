@@ -6,8 +6,6 @@
 @using Mandatory_Assignment.Models;
 @using Mandatory_Assignment.Infrastructure;
 
-<a href="/Admin/Dashboard">Back To The Dashboard</a>
-<br />
 <h2>Show all invoices for a customer</h2>
 
 @using (Html.BeginForm("Index", "Customers", FormMethod.Get))
@@ -22,20 +20,20 @@
     <h2>Showing invoices for @ViewBag.Selected</h2>
     foreach (Reservation reservation in ViewBag.repository.Reservations)
     {
-        if (ViewBag.Selected == reservation.customer.firstname + " " + reservation.customer.lastname)
+        if (ViewBag.Selected == reservation.Customer.Firstname + " " + reservation.Customer.Lastname)
         {
             <p>
-                @reservation.customer.firstname @reservation.customer.lastname<br />
-                @reservation.customer.address<br />
-                @reservation.customer.zipcode @reservation.customer.city<br />
+                @reservation.Customer.Firstname @reservation.Customer.Lastname<br />
+                @reservation.Customer.Address<br />
+                @reservation.Customer.Zipcode @reservation.Customer.City<br />
                 <br />
-                Species: @reservation.specie<br />
-                Name: @reservation.petName<br />
-                Received by: @reservation.employee.firstname @reservation.employee.lastname<br />
-                Period: @reservation.startDate.ToShortDateString() to @reservation.endDate.ToShortDateString()<br />
-                Days: @reservation.endDate.Subtract(reservation.startDate).TotalDays<br />
-                Price: @ViewBag.repository.Prices[reservation.specie] DKK per day<br />
-                Total: @( ViewBag.repository.Prices[reservation.specie] * (reservation.endDate.Subtract(reservation.startDate).TotalDays) ) DKK per day<br />
+                Species: @reservation.Specie<br />
+                Name: @reservation.PetName<br />
+                Received by: @reservation.Employee.Firstname @reservation.Employee.Lastname<br />
+                Period: @reservation.StartDate.ToShortDateString() to @reservation.EndDate.ToShortDateString()<br />
+                Days: @reservation.EndDate.Subtract(reservation.StartDate).TotalDays<br />
+                Price: @ViewBag.repository.Prices[reservation.Specie] DKK per day<br />
+                Total: @( ViewBag.repository.Prices[reservation.Specie] * (reservation.EndDate.Subtract(reservation.StartDate).TotalDays) ) DKK per day<br />
             </p>
             <hr />
         }

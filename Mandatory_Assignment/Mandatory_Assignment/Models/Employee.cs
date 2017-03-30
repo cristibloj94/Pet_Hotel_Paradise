@@ -8,22 +8,22 @@ namespace Mandatory_Assignment.Models
     public class Employee : Person
     {
         // properties
-        public string initials { get; set; }
-        public List<Reservation> reservations { get; set; }
+        public string Initials { get; set; }
+        public List<Reservation> Reservations { get; set; }
 
         public Employee() { }
 
         // constructors
-        public Employee(int personID, string firstname, string lastname, string initials, string phone)
-            : base(personID, firstname, lastname, phone)
+        public Employee(int PersonID, string Firstname, string Lastname, string Initials, string Phone)
+            : base(PersonID, Firstname, Lastname, Phone)
         {
-            this.initials = initials;
-            reservations = new List<Reservation>();
+            this.Initials = Initials;
+            Reservations = new List<Reservation>();
         }
 
-        public void AddReservation(Reservation reservation)
+        public void AddReservation(Reservation Reservation)
         {
-            reservations.Add(reservation);
+            Reservations.Add(Reservation);
         }
     }
 }

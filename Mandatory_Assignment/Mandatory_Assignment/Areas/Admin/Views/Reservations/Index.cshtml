@@ -6,8 +6,6 @@
 @using Mandatory_Assignment.Models;
 @using Mandatory_Assignment.Infrastructure;
 
-<a href="/Admin/Dashboard">Back To The Dashboard</a>
-<br />
 <h2>All reservations</h2>
 
 <table>
@@ -23,11 +21,11 @@
     @foreach (Reservation reservation in ViewBag.repository.Reservations)
     {
         <tr>
-            <td>@reservation.specie</td>
-            <td>@reservation.petName</td>
-            <td>@reservation.startDate.ToShortDateString()</td>
-            <td>@reservation.customer.firstname @reservation.customer.lastname</td>
-            <td>@reservation.customer.phone</td>
+            <td>@reservation.Specie</td>
+            <td>@reservation.PetName</td>
+            <td>@reservation.StartDate.ToShortDateString()</td>
+            <td>@reservation.Customer.Firstname @reservation.Customer.Lastname</td>
+            <td>@reservation.Customer.Phone</td>
         </tr>
     }
 

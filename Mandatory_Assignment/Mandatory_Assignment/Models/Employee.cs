@@ -11,6 +11,8 @@ namespace Mandatory_Assignment.Models
         public string initials { get; set; }
         public List<Reservation> reservations { get; set; }
 
+        public Employee() { }
+
         // constructors
         public Employee(int personID, string firstname, string lastname, string initials, string phone)
             : base(personID, firstname, lastname, phone)

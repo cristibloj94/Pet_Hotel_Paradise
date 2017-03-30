@@ -29,7 +29,6 @@
     @Html.TextBoxFor(m => m.petName) <br />
     <label>Arrival</label>
     @Html.EditorFor(m => m.startDate) <br />
-    <label>Departure</label>
-    @Html.EditorFor(m => m.endDate) <br />
+    @Html.LabelFor(m => m.endDate) @Html.EditorFor(m => m.endDate) <br />
     <input type="submit" value="Place your reservation" />
 }

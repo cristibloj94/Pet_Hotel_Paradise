@@ -14,6 +14,8 @@ namespace Mandatory_Assignment.Models
         public string email { get; set; }
         public List<Reservation> reservations { get; set; }
 
+        public Customer() { }
+
         // constructors
         public Customer(int personID, string firstname, string lastname, string address, string zipcode, string city, string email, string phone)
             : base(personID, firstname, lastname, phone)

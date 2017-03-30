@@ -16,17 +16,9 @@ namespace Mandatory_Assignment.Controllers
         public ActionResult Index()
         {
             List<SelectListItem> speciesList = new List<SelectListItem>();
-            if (Session["speciesList"] == null)
+            foreach (KeyValuePair<string, int> kvp in repository.Prices)
             {
-                foreach (KeyValuePair<string, int> kvp in repository.Prices)
-                {
-                    speciesList.Add(new SelectListItem { Text = kvp.Key, Value = kvp.Key });
-                }
-                Session["speciesList"] = speciesList;
-            }
-            else
-            {
-                speciesList = (List<SelectListItem>)Session["speciesList"];
+                speciesList.Add(new SelectListItem { Text = kvp.Key, Value = kvp.Key });
             }
             Utilities.SortSelectList(speciesList);
             ViewBag.speciesList = speciesList;
@@ -35,9 +27,10 @@ namespace Mandatory_Assignment.Controllers
         }
 
         [HttpPost]
-        public ActionResult BookReservation(Reservation res)
+        public ActionResult BookReservation(Reservation res, FormCollection formData)
         {
             Repository repository = new Repository();
+            res.specie = formData["speciesList"];
             if (Session["repository"] == null)
             {
                 Session["repository"] = repository;
@@ -47,7 +40,7 @@ namespace Mandatory_Assignment.Controllers
                 repository = (Repository)Session["repository"];
             }
             repository.Reservations.Add(res);
-            return View();
+            return View(res);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Mandatory_Assignment.Models
         public string lastname { get; set; }
         public string phone { get; set; }
 
+        public Person() { }
+
         // constructors
         public Person(int personID, string firstname, string lastname, string phone)
         {

@@ -16,17 +16,19 @@ namespace Mandatory_Assignment.Areas.Admin.Controllers
         public ActionResult Index(string ViewReservations)
         {
             List<SelectListItem> viewReservations = new List<SelectListItem>();
-            if (Session["viewReservations"] == null)
+
+            if (Session["repository"] == null)
             {
-                foreach (Customer customer in repository.Customers)
-                {
-                    viewReservations.Add(new SelectListItem { Text = (customer.Firstname + " " + customer.Lastname), Value = (customer.Firstname + " " + customer.Lastname) });
-                }
-                Session["viewReservations"] = viewReservations;
+                Session["repository"] = repository;
             }
             else
             {
-                viewReservations = (List<SelectListItem>)Session["viewReservations"];
+                repository = (Repository)Session["repository"];
+            }
+
+            foreach (Customer customer in repository.Customers)
+            {
+                viewReservations.Add(new SelectListItem { Text = (customer.Firstname + " " + customer.Lastname), Value = (customer.Firstname + " " + customer.Lastname) });
             }
 
             Utilities.SortSelectList(viewReservations);

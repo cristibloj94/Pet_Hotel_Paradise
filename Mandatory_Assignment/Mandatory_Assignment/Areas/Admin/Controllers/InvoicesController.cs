@@ -14,6 +14,14 @@ namespace Mandatory_Assignment.Areas.Admin.Controllers
         // GET: Admin/Invoices
         public ActionResult Index()
         {
+            if (Session["repository"] == null)
+            {
+                Session["repository"] = repository;
+            }
+            else
+            {
+                repository = (Repository)Session["repository"];
+            }
             ViewBag.repository = repository;
             return View();
         }

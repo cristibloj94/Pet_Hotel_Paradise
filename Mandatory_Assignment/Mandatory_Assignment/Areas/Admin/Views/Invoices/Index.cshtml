@@ -17,7 +17,9 @@
         <br />
         Species: @reservation.Specie<br />
         Name: @reservation.PetName<br />
-        Received by: @reservation.Employee.Firstname @reservation.Employee.Lastname<br />
+        Received by: @if (reservation.Employee != null)
+        { <span>@reservation.Employee.Firstname @reservation.Employee.Lastname</span> }
+        else { <span>none yet</span> } <br />
         Period: @reservation.StartDate.ToShortDateString() to @reservation.EndDate.ToShortDateString()<br />
         Days: @reservation.EndDate.Subtract(reservation.StartDate).TotalDays<br />
         Price: @ViewBag.repository.Prices[reservation.Specie] DKK per day<br />

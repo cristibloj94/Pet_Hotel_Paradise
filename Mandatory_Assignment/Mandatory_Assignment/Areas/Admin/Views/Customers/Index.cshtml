@@ -18,24 +18,12 @@
 @if (ViewBag.Selected != null)
 {
     <h2>Showing invoices for @ViewBag.Selected</h2>
+    @model IEnumerable<Mandatory_Assignment.Models.Reservation>
     foreach (Reservation reservation in ViewBag.repository.Reservations)
     {
         if (ViewBag.Selected == reservation.Customer.Firstname + " " + reservation.Customer.Lastname)
         {
-            <p>
-                @reservation.Customer.Firstname @reservation.Customer.Lastname<br />
-                @reservation.Customer.Address<br />
-                @reservation.Customer.Zipcode @reservation.Customer.City<br />
-                <br />
-                Species: @reservation.Specie<br />
-                Name: @reservation.PetName<br />
-                Received by: @reservation.Employee.Firstname @reservation.Employee.Lastname<br />
-                Period: @reservation.StartDate.ToShortDateString() to @reservation.EndDate.ToShortDateString()<br />
-                Days: @reservation.EndDate.Subtract(reservation.StartDate).TotalDays<br />
-                Price: @ViewBag.repository.Prices[reservation.Specie] DKK per day<br />
-                Total: @( ViewBag.repository.Prices[reservation.Specie] * (reservation.EndDate.Subtract(reservation.StartDate).TotalDays) ) DKK per day<br />
-            </p>
-            <hr />
+            @Html.Partial("_Invoice", reservation)
         }
     }
 }

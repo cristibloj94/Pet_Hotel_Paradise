@@ -105,6 +105,7 @@
     <Content Include="Areas\Admin\Views\Employees\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Invoices\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Reservations\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Invoice.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

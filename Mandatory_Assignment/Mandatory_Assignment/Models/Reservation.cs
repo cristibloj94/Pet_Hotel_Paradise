@@ -12,12 +12,12 @@ namespace Mandatory_Assignment.Models
         public int ReservationID { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string PetName { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime Birthdate { get; set; }
         public string Specie { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public Customer Customer { get; set; }
         public Employee Employee { get; set; }

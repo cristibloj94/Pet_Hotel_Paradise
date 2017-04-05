@@ -3,5 +3,25 @@
 @model Mandatory_Assignment.Models.Reservation
 
 
+<h2>Congratulations! Your booking was successful!</h2>
 
-@Model.PetName
+<p>Here are your order details:</p>
+
+<section>
+    <h3>Customer information</h3>
+    <p><b>Name:</b> @Model.Customer.Firstname @Model.Customer.Lastname</p>
+    <p><b>Address:</b> @Model.Customer.Address | @Model.Customer.Zipcode @Model.Customer.City</p>
+    <p><b>Contact email:</b> @Model.Customer.Email</p>
+    <p><b>Contact phone:</b> @Model.Customer.Phone</p>
+</section>
+
+<section>
+    <h3>Reservation information</h3>
+    <p><b>Pet name</b>: @Model.PetName</p>
+    <p><b>Pet specie:</b> @Model.Specie (@ViewBag.repository.Prices[Model.Specie] DKK per day)</p>
+    <p><b>Period of stay:</b> @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()</p>
+    <p><b>Total amount of days:</b> @Model.EndDate.Subtract(Model.StartDate).TotalDays</p>
+    <p><b>Total amount to pay:</b> @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK</p>
+</section>
+
+<p>Please remember to bring the appropriate sum of money along with your beloved pet.</p>

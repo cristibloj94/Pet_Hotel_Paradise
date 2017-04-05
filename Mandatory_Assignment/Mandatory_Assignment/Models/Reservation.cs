@@ -10,7 +10,7 @@ namespace Mandatory_Assignment.Models
     {
         // properties
         public int ReservationID { get; set; }
-        [Required(AllowEmptyStrings = false)]
+        [Required]
         public string PetName { get; set; }
         [DataType(DataType.Date)]
         public DateTime Birthdate { get; set; }

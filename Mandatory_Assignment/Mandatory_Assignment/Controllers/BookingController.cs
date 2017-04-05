@@ -40,6 +40,7 @@ namespace Mandatory_Assignment.Controllers
                 repository = (Repository)Session["repository"];
             }
             repository.Reservations.Add(res);
+            ViewBag.repository = repository;
             return View(res);
         }
     }

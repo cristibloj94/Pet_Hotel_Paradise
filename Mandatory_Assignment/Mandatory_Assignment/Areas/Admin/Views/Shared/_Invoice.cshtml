@@ -7,13 +7,13 @@
     <br />
     Species: @Model.Specie<br />
     Name: @Model.PetName<br />
-    Received by OUR EMPLOYEE: @if (Model.Employee != null)
+    Received by: @if (Model.Employee != null)
     { <span>@Model.Employee.Firstname @Model.Employee.Lastname</span> }
     else
     { <span>none yet</span> } <br />
     Period: @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()<br />
     Days: @Model.EndDate.Subtract(Model.StartDate).TotalDays<br />
     Price: @ViewBag.repository.Prices[Model.Specie] DKK per day<br />
-    Total: @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK per day<br />
+    Total: @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK<br />
 </p>
 <hr />

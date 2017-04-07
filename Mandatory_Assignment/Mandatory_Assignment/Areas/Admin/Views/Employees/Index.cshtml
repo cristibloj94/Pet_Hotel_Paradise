@@ -6,16 +6,16 @@
 @using Mandatory_Assignment.Models;
 @using Mandatory_Assignment.Infrastructure;
 
-<h2>Employee list</h2>
+<h2 class="centralize fat">Slave list</h2>
 
 @foreach (Employee employee in ViewBag.repository.Employees)
 {
-    <h3>@employee.Firstname @employee.Lastname</h3>
-    <p>
-        ID number: @employee.PersonID<br />
-        Initials: @employee.Initials.ToUpper()<br />
-        Phone number: @employee.Phone<br />
-        Active reservations: @employee.Reservations.Count<br />
-    </p>
-    <hr />
+    <section class="invoice-type">
+        <h3>@employee.Firstname @employee.Lastname</h3>
+        <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">ID number:</span>@employee.PersonID</p>
+        <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Initials:</span>@employee.Initials.ToUpper()</p>
+        <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Phone number:</span>@employee.Phone</p>
+        <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Active reservations:</span>@employee.Reservations.Count</p>
+        <hr />
+    </section>
 }

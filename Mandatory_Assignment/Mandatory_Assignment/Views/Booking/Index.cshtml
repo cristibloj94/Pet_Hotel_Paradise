@@ -3,34 +3,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Book your reservation here</h2>
-@model Mandatory_Assignment.Models.Reservation
-@using (Html.BeginForm("BookReservation", "Booking", FormMethod.Post))
-{
-    <h3>Customer information</h3>
-    <label>First Name</label>
-    @Html.TextBoxFor(m => m.Customer.Firstname) <br />
-    <label>Last Name</label>
-    @Html.TextBoxFor(m => m.Customer.Lastname) <br />
-    <label>Address</label>
-    @Html.TextBoxFor(m => m.Customer.Address) <br />
-    <label>Zip</label>
-    @Html.TextBoxFor(m => m.Customer.Zipcode) <br />
-    <label>City</label>
-    @Html.TextBoxFor(m => m.Customer.City) <br />
-    <label>email</label>
-    @Html.TextBoxFor(m => m.Customer.Email) <br />
-    <label>Phone</label>
-    @Html.TextBoxFor(m => m.Customer.Phone) <br />
-    <h3>Reservation details</h3>
-    <label>Species</label>
-    @Html.DropDownList("speciesList") <br />
-    <label>Pet name</label>
-    @Html.TextBoxFor(m => m.PetName) <br />
-    <label>Arrival</label>
-    @Html.EditorFor(m => m.StartDate) <br />
-    <label>Departure</label>
-    @Html.EditorFor(m => m.EndDate) <br />
-    <input type="submit" value="Place your reservation" />
-}
-@{Html.EndForm();}
+<h2 class="centralize fat">Book your reservation here</h2>
+<div class="form">
+    @model Mandatory_Assignment.Models.Reservation
+    @using (Html.BeginForm("BookReservation", "Booking", FormMethod.Post))
+    {
+        <h3>Customer information</h3>
+        <label>First Name</label>
+        @Html.TextBoxFor(m => m.Customer.Firstname) <br />
+        <label>Last Name</label>
+        @Html.TextBoxFor(m => m.Customer.Lastname) <br />
+        <label>Address</label>
+        @Html.TextBoxFor(m => m.Customer.Address) <br />
+        <label>Zip</label>
+        @Html.TextBoxFor(m => m.Customer.Zipcode) <br />
+        <label>City</label>
+        @Html.TextBoxFor(m => m.Customer.City) <br />
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.Customer.Email) <br />
+        <label>Phone</label>
+        @Html.TextBoxFor(m => m.Customer.Phone) <br />
+        <h3>Reservation details</h3>
+        <label>Species</label>
+        @Html.DropDownList("speciesList") <br />
+        <label>Pet name</label>
+        @Html.TextBoxFor(m => m.PetName) <br />
+        <label>Arrival</label>
+        @Html.EditorFor(m => m.StartDate) <br />
+        <label>Departure</label>
+        @Html.EditorFor(m => m.EndDate) <br />
+        <input type="submit" value="Place your reservation" />
+    }
+    @{Html.EndForm();}
+</div>

@@ -1,19 +1,19 @@
 ﻿@model Mandatory_Assignment.Models.Reservation
 
-<p>
-    @Model.Customer.Firstname @Model.Customer.Lastname<br />
-    @Model.Customer.Address<br />
-    @Model.Customer.Zipcode @Model.Customer.City<br />
+<div class="invoice-type">
+    <p class="invoice-type__line">@Model.Customer.Firstname @Model.Customer.Lastname</p>
+    <p class="invoic-typee__line">@Model.Customer.Address</p>
+    <p class="invoice-type__line">@Model.Customer.Zipcode @Model.Customer.City</p>
     <br />
-    Species: @Model.Specie<br />
-    Name: @Model.PetName<br />
-    Received by: @if (Model.Employee != null)
+    <p class="invoice-type__line"><span class="invoice-type__label">Species:</span> @Model.Specie</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Name:</span> @Model.PetName</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Received by:</span> @if (Model.Employee != null)
     { <span>@Model.Employee.Firstname @Model.Employee.Lastname</span> }
     else
-    { <span>none yet</span> } <br />
-    Period: @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()<br />
-    Days: @Model.EndDate.Subtract(Model.StartDate).TotalDays<br />
-    Price: @ViewBag.repository.Prices[Model.Specie] DKK per day<br />
-    Total: @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK<br />
-</p>
-<hr />
+    { <span>none yet</span> }</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Period:</span> @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Days:</span> @Model.EndDate.Subtract(Model.StartDate).TotalDays</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Price:</span> @ViewBag.repository.Prices[Model.Specie] DKK per day</p>
+    <p class="invoice-type__line"><span class="invoice-type__label">Total:</span> @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK</p>
+    <hr />
+</div>

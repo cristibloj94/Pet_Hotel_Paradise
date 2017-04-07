@@ -6,7 +6,7 @@
 @using Mandatory_Assignment.Models;
 @using Mandatory_Assignment.Infrastructure;
 
-<h2>Show all invoices for a customer</h2>
+<h2 class="centralize fat">Show all invoices for a customer</h2>
 
 @using (Html.BeginForm("Index", "Customers", FormMethod.Get))
 {
@@ -17,7 +17,7 @@
 
 @if (ViewBag.Selected != null)
 {
-    <h2>Showing invoices for @ViewBag.Selected</h2>
+    <h2 class="centralize">Showing invoices for @ViewBag.Selected</h2>
     @model IEnumerable<Mandatory_Assignment.Models.Reservation>
     foreach (Reservation reservation in ViewBag.repository.Reservations)
     {

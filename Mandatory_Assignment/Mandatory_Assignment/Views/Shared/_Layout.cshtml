@@ -3,43 +3,50 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title - Pet Paraadise Hotel</title>
+    <link href="~/front/dist/main.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <header class="header">
+        <div class="header__wrapper">
+            <div class="logo">
+                <a class="logo__link" href="~/">
+                    <img class="logo__image" src="~/front/img/logo--large.png" alt="Pet Paradise Hotel logo" />
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About Us", "Index", "About", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Book", "Index", "Booking", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Our Services", "Index", "Services", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "navbar-brand" })</li>
-                </ul>
-                @Html.ActionLink("Log In", "Index", "Dashboard", new { area = "Admin" }, new { @class = "navbar-brand" })
+            <nav class="menu">
+                <div class="menu__wrapper">
+                    <ul class="menu__list js-menu__list">
+                        <li class="menu__item">@Html.ActionLink("About Us", "Index", "About", new { area = "" }, new { @class = "menu__link" })</li>
+                        <li class="menu__item">@Html.ActionLink("Book", "Index", "Booking", new { area = "" }, new { @class = "menu__link" })</li>
+                        <li class="menu__item">@Html.ActionLink("Our Services", "Index", "Services", new { area = "" }, new { @class = "menu__link" })</li>
+                        <li class="menu__item">@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "menu__link" })</li>
+                        <li class="menu__item">@Html.ActionLink("Log In", "Index", "Dashboard", new { area = "Admin" }, new { @class = "menu__link" })</li>
+                    </ul>
+                    <div class="menu__button">
+                        <img class="menu__button--open js-menu__button--open invisible" src="~/front/img/menu--to-close.svg" alt="Click this to close the menu" />
+                        <img class="menu__button--closed js-menu__button--closed visible" src="~/front/img/menu.svg" alt="Click this to open the menu" />
+                    </div>
+                </div>
+            </nav>
+            <div class="top-heading">
+                <h1>PET PARADISE HOTEL</h1>
             </div>
         </div>
+    </header>
+    <div class="overlay js-overlay invisible"></div>
+    <div class="container">
+        <div class="wrapper">
+            @RenderBody()
+        </div>
     </div>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Pet Paradise Hotel</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <footer class="footer">
+        <div class="wrapper">
+            <h3 class="heading centralize">&copy; @DateTime.Now.Year - Pet Paradise Hotel</h3>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-3.2.0.min.js"></script>
+    <script src="~/front/dist/main.js"></script>
 </body>
 </html>

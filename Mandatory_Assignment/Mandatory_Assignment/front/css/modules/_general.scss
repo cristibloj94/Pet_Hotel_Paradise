@@ -1,0 +1,46 @@
+// * {
+// 	@include transition($transition--fast);
+// }
+
+html {
+	font-size: $font-size--small;
+	min-height: 100%;
+	min-width: 100%;
+	position: relative;
+	color: $color--text;
+	@media (min-width: $width--palm) {
+		font-size: $font-size--base;
+	}
+	@media (min-width: $width--portable) {
+		font-size: $font-size--medium;
+	}
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.container {
+	min-height: 83vh;
+	margin: 0 auto;
+	background-color: $color--background;
+	padding-top: (40px + $spacing);
+	padding-bottom: $spacing*2;
+	@media (min-width: $width--portable) {
+		padding-top: (70px + $spacing);
+		padding-bottom: $spacing*3;
+	}
+}
+
+.wrapper {
+	position: relative;
+	margin: auto $spacing;
+	padding: $spacing 0;
+	@media (min-width: $width--desk) {
+		margin: auto;
+		max-width: ($width--desk - $spacing*2);
+	}
+}

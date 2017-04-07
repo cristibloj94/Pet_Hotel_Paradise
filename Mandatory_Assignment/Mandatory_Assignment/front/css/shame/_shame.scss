@@ -1,0 +1,33 @@
+.homeexamples {
+	height: 150px;
+	margin: $spacing;
+	border: 3px solid $color--text;
+	@media (min-width: $width--portable) {
+		height: 250px;
+	}
+}
+
+.welcome {
+	width: 100%;
+}
+
+.order-now {
+	@include border-radius($radius--base);
+	border: 3px solid $color--text;
+	max-width: 400px;
+	margin: auto;
+	@include transition($transition--slow);
+	&:hover {
+		background: $color--banners;
+		@include transition($transition--slow);
+	}
+	a {
+		text-decoration: none;
+		padding: $spacing/2;
+		color: $color--text;
+	}
+}
+
+.restrict-size {
+	max-width: 90%;
+}

@@ -1,0 +1,30 @@
+.invoice-type {
+	padding: $spacing 0;
+	&__line {
+		position: relative;
+		display: block;
+	}
+	&__label {
+		font-weight: $font-weight--heavy;
+		width: 80px;
+		display: inline-block;
+		@media (min-width: $width--palm) {
+			width: 100px;
+		}
+		@media (min-width: $width--portable) {
+			width: 150px;
+		}
+		&--long {
+			width: 120px;
+			@media (min-width: $width--palm) {
+				width: 160px;
+			}
+			@media (min-width: $width--portable) {
+				width: 220px;
+			}
+		}
+	}
+	@media (min-width: $width--portable) {
+		padding: $spacing;
+	}
+}

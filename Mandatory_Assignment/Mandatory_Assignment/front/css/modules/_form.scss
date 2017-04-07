@@ -1,0 +1,14 @@
+form {
+	width: 100%;
+	text-align: center;
+	input, select {
+		@include box-sizing(border-box);
+		display: block;
+		width: 90%;
+		margin: auto;
+		max-width: 350px;
+		padding: $spacing/11*4;
+		@include border-radius($radius--base);
+	}
+
+}

@@ -1,0 +1,15 @@
+.testimonials {	
+	height: 300px;
+	padding: $spacing;
+	&__article {
+		display: none;
+		width: 90%;
+		margin: auto;
+	}
+	@media (min-width: $width--palm) {
+		height: 250px;
+	}
+	@media (min-width: $width--portable) {
+		height: 200px;
+	}
+}

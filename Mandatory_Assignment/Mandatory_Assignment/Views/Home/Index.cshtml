@@ -3,4 +3,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Welcome to Pet Paradise Hotel</h2>
+
+<figure class="centralize fat">
+    <img class="welcome" src="~/front/img/welcome.gif" />
+    <h2>to Pet Paradise Hotel</h2>
+</figure>
+
+<section class="testimonials js-testimonials centralize">
+    <article class="testimonials__article">
+        <h3>"My dog peed all the time... I think I'd kill myself if I wouldn't find this wonderful resort to occasionally get rid of my darling."</h3>
+        <p>Nanna, 22</p>
+    </article>
+    <article class="testimonials__article">
+        <h3>“They treat animals as animals in the cruelest way possible. That’s why I love it so much!”</h3>
+        <p>Camilla, 18</p>
+    </article>
+    <article class="testimonials__article">
+        <h3>“I like that the pets are tortured untill they really miss their owner. It makes my self-esteem rise a whole lot.”</h3>
+        <p>Thomas, 24</p>
+    </article>
+</section>
+
+<article class="centralize fat">
+    <img class="homeexamples radial inline-block" src="~/front/img/home01.jpg" alt="Pet care example, figure 01" />
+    <img class="homeexamples radial inline-block" src="~/front/img/home03.jpg" alt="Pet care example, figure 03" />
+    <img class="homeexamples radial inline-block" src="~/front/img/home02.jpg" alt="Pet care example, figure 02" />
+    <img class="homeexamples radial inline-block" src="~/front/img/home04.jpg" alt="Pet care example, figure 04" />
+    <img class="homeexamples radial inline-block" src="~/front/img/home05.jpg" alt="Pet care example, figure 05" />
+    <h2 class="order-now">@Html.ActionLink("Book a reservation now!", "Index", "Booking", new { area = "" }, new { @class = "heading" })</h2>
+    <p>We don't bite, unlike your pets</p>
+</article>

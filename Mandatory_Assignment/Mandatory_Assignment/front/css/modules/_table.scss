@@ -1,0 +1,26 @@
+table {
+	margin: auto;
+	border: 1px solid $color--dark;
+	text-align: center;
+	th, td {
+		border: 1px solid $color--dark;
+		padding: $spacing/11*2;
+		@media(min-width: $width--portable) {
+			padding: $spacing/11*4;
+		}
+	}
+}
+
+.table--small {
+	@extend table;
+	font-size: $font-size--nano;
+	@media(min-width: $width--palm) {
+		font-size: $font-size--xsmall;
+	}
+	@media(min-width: $width--portable) {
+		font-size: $font-size--base;
+	}
+	@media(min-width: $width--desk) {
+		font-size: $font-size--medium;
+	}
+}

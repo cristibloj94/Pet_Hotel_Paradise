@@ -3,25 +3,25 @@
 @model Mandatory_Assignment.Models.Reservation
 
 
-<h2>Congratulations! Your booking was successful!</h2>
+<h2 class="centralize fat">Congratulations! Your booking was successful!</h2>
 
 <p>Here are your order details:</p>
 
-<section>
+<section class="invoice-type">
     <h3>Customer information</h3>
-    <p><b>Name:</b> @Model.Customer.Firstname @Model.Customer.Lastname</p>
-    <p><b>Address:</b> @Model.Customer.Address | @Model.Customer.Zipcode @Model.Customer.City</p>
-    <p><b>Contact email:</b> @Model.Customer.Email</p>
-    <p><b>Contact phone:</b> @Model.Customer.Phone</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Name:</span> @Model.Customer.Firstname @Model.Customer.Lastname</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Address:</span> @Model.Customer.Address | @Model.Customer.Zipcode @Model.Customer.City</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Contact email:</span> @Model.Customer.Email</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Contact phone:</span> @Model.Customer.Phone</p>
 </section>
 
-<section>
+<section class="invoice-type">
     <h3>Reservation information</h3>
-    <p><b>Pet name</b>: @Model.PetName</p>
-    <p><b>Pet specie:</b> @Model.Specie (@ViewBag.repository.Prices[Model.Specie] DKK per day)</p>
-    <p><b>Period of stay:</b> @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()</p>
-    <p><b>Total amount of days:</b> @Model.EndDate.Subtract(Model.StartDate).TotalDays</p>
-    <p><b>Total amount to pay:</b> @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Pet name:</span> @Model.PetName</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Pet specie:</span> @Model.Specie (@ViewBag.repository.Prices[Model.Specie] DKK per day)</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Period of stay:</span> @Model.StartDate.ToShortDateString() to @Model.EndDate.ToShortDateString()</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Total amount of days:</span> @Model.EndDate.Subtract(Model.StartDate).TotalDays</p>
+    <p class="invoice-type__line"><span class="invoice-type__label invoice-type__label--long">Total amount to pay:</span> @( ViewBag.repository.Prices[Model.Specie] * (Model.EndDate.Subtract(Model.StartDate).TotalDays) ) DKK</p>
 </section>
 
-<p>Please remember to bring the appropriate sum of money along with your beloved pet.</p>
+<h3 class="centralize">Please remember to bring the appropriate sum of money along with your beloved pet.</h3>

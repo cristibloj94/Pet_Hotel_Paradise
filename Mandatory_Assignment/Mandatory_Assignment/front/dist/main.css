@@ -163,7 +163,7 @@ html {
   font-size: 23px; }
 
 .visible {
-  display: default; }
+  display: inherit; }
 
 .centralize {
   margin: auto; }
@@ -310,16 +310,12 @@ html {
   margin: auto;
   line-height: 1;
   font-size: 23px;
-  font-size: -webkit-calc(3.8vw * 2 - 1vw);
-  font-size: -moz-calc(3.8vw * 2 - 1vw);
-  font-size: calc(3.8vw * 2 - 1vw); }
+  font-size: 6.6vw; }
 
 @media (min-width: 450px) {
   .top-heading h1 {
     font-size: 30px;
-    font-size: -webkit-calc(3.8vw * 2 - 1vw);
-    font-size: -moz-calc(3.8vw * 2 - 1vw);
-    font-size: calc(3.8vw * 2 - 1vw); } }
+    font-size: 6.6vw; } }
 
 @media (min-width: 680px) {
   .top-heading h1 {

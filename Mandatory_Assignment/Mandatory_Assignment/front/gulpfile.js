@@ -48,8 +48,7 @@ gulp.task('css', function() {
 	];
 	gulp.src(FILES)
 	    .pipe(sass({ errLogToConsole: true }))
-//	    .pipe(prefix("last 1 version", "> 1%", "ie 9"))	// to place prefixes for more suport (not used, hence the custom mixins)
-	    .pipe(gulpif(ugly, minify().on('error', function (error) { console.warn(error.message); })))	// to minify (remove comments and shit)
+	    .pipe(gulpif(ugly, minify().on('error', function (error) { console.warn(error.message); })))
 		.pipe(sass())
 			.on('error', sass.logError)
 		.pipe(gulp.dest('dist'))

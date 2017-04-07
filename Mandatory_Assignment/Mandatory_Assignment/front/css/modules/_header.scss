@@ -106,10 +106,10 @@
 		text-align: center;
 		line-height: 1;
 		font-size: $font-size--medium;
-		@include calc("font-size", "3.8vw * 2 - 1vw");
+		font-size: 6.6vw;
 		@media (min-width: $width--palm*1.25) {
 			font-size: $font-size--large;
-			@include calc("font-size", "3.8vw * 2 - 1vw");
+			font-size: 6.6vw;
 		}
 		@media (min-width: $width--portable) {
 			font-size: $font-size--xlarge*1.25;

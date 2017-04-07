@@ -39,7 +39,26 @@ namespace Mandatory_Assignment.Controllers
             {
                 repository = (Repository)Session["repository"];
             }
-            repository.Reservations.Add(res);
+            // we need to check duplicate objects in our repo.
+            // this is needed for showing our invoices by customer, where all duplicates are currently shown.
+            // and that's because they are ALL added to our list, regardless of matches
+            int counter = new int();    // so let's set a counter for duplicates
+            counter = 0;    // and set our counter to zero
+            foreach (Customer customer in repository.Customers) // and then check each existing customer in our repo and compare to the newly added one
+            {
+                if (customer.Equals(res.Customer))  // unfortunately, this comparative bullshit doesn't work
+                {
+                    counter = counter + 1;  // but if it did, it would add at least one thing
+                }
+            }
+            if (counter < 1)    // so if it would be less than one
+            {
+                repository.Reservations.Add(res);   // it would add both the reservation to reservations list
+                repository.Customers.Add(res.Customer); // and the customer to the customer list
+            } else
+            {
+                repository.Reservations.Add(res); // or only the reservation to reservations list otherwise
+            }
             ViewBag.repository = repository;
             return View(res);
         }
